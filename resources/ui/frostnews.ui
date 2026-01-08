@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="libadwaita" version="1.0" />
+  <template class="FrostNewsAPPWindow" parent="AdwApplicationWindow" >
+    <property name="title">Frost News</property>
+    <property name="default-width">1300</property>
+    <property name="default-height">900</property>
+    <child>
+      <object class="AdwNavigationSplitView" id="split_view">
+        <property name="hexpand">true</property>
+        <property name="vexpand">true</property>
+
+        <property name="sidebar">
+          <object class="AdwNavigationPage">
+            <child>
+              <object class="AdwToolbarView" id="sidebar_toolbar">
+                <child type="top">
+                  <object class="AdwHeaderBar">
+                    <property name="show-title">false</property>
+                    <child type="end">
+                      <object class="GtkButton" id="toggle_sidebar_btn">
+                        <property name="icon-name">sidebar-show-symbolic</property>
+                        <style>
+                          <class name="flat"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </child>
+  </template>
+</interface>

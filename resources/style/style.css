@@ -1,0 +1,149 @@
+/* This affects everything in the window */
+window {
+    font-size: 11pt;
+    /* 'pt' or 'rem' is better than 'px' for readability */
+    font-weight: 400;
+}
+
+/* This ensures labels inside boxes and lists look consistent */
+label {
+    font-size: 11pt;
+}
+
+/* Sidebar items */
+
+list.navigation-sidebar row {
+    border-radius: 16px;
+    padding: 2px;
+}
+
+list.navigation-sidebar row:selected {
+    color: @window_fg_color;
+}
+
+
+.frost-brand-title {
+    font-size: 30pt;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.frost-date-subtitle {
+    font-size: 14pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: @accent_color;
+}
+
+/* Article Cards */
+.headline-tile {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.headline-tile:hover {
+    transform: scale(1.02) translateY(-4px);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.headline-tile:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
+}
+
+.read-more-button {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.headline-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.headline-image {
+    border-radius: 20px;
+}
+
+/* Make whole tile rounded + nice hover effect */
+flowboxchild {
+    border-radius: 20px;
+}
+
+
+
+/* Title styling */
+.news-tile-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 1px;
+}
+
+/* Description - smaller, lighter */
+.news-tile-description {
+    font-size: 0.92em;
+    color: @dim_label_color;
+}
+
+.news-tile-image {
+    border-radius: 20px;
+}
+
+.news-tile-image-frame {
+    border-radius: 20px;   /* only round left side */
+    background-color: @placeholder_bg; 
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* nice gray/fallback when loading */
+}
+
+.image-scrim {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.0) 100%);
+    padding: 12px;
+    margin-bottom: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* The Source and Date text */
+.headline-meta {
+    color: white;
+    font-weight: 800;
+    font-size: 11pt;
+    letter-spacing: 0.5px;
+}
+
+.gradient-blur-fallback {
+    position: relative;
+}
+
+.gradient-blur-fallback::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.65) 70%, black 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gradient-blur-fallback picture {
+    filter: blur(0px);                    /* reset */
+}
+
+/* Optional: very soft overall blur + strong gradient */
+.gradient-blur-fallback picture.blur-layer {
+    filter: blur(4px) brightness(0.85);
+    transform: scale(1.05);               /* fake edge bleed */
+}
+
+.headline-image-frame {
+    border-radius: 20px;   /* only round left side */
+    background-color: @placeholder_bg;  /* nice gray/fallback when loading */
+}
+
+.news-page-article-tile {
+    font-size: 20pt;
+}

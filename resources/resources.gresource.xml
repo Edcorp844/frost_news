@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/example/frostnews">
+    <file preprocess="xml-stripblanks">ui/frostnews.ui</file>
+    <!-- Category pages-->
+    <file preprocess="xml-stripblanks">ui/category_pages/topheadlines.ui</file>
+    <file preprocess="xml-stripblanks">ui/category_pages/businessnews_page.ui</file>
+    <file preprocess="xml-stripblanks">ui/category_pages/custom_category_page.ui</file>
+    <file preprocess="xml-stripblanks">ui/category_pages/entertainmentnews_page.ui</file>
+    <file preprocess="xml-stripblanks">ui/category_pages/healthnews_page.ui</file>
+    <file preprocess="xml-stripblanks">ui/category_pages/sciencenews_page.ui</file>
+    <file preprocess="xml-stripblanks">ui/category_pages/sportsnews_page.ui</file>
+    <file preprocess="xml-stripblanks">ui/category_pages/technologynews_page.ui</file>
+    <!-- Settings Pages-->
+    <file preprocess="xml-stripblanks">ui/settings_page.ui</file>
+    <!-- Search pages-->
+    <file preprocess="xml-stripblanks">ui/search_page.ui</file>
+    <!-- tempalte pages-->
+    <file preprocess="xml-stripblanks">ui/page_template.ui</file>
+    <!-- Other pages-->
+    <file preprocess="xml-stripblanks">ui/newspage.ui</file>
+    <file>style/style.css</file>
+  </gresource>
+</gresources>
