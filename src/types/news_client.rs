@@ -49,7 +49,7 @@ impl NewsClient for NewsAPIClient {
         let response = self
             .fetch_top_headlines(
                 Some("us".into()),
-                Some("general".into()),
+                Some("sports".into()),
                 None,
                 None,
                 Some(100),

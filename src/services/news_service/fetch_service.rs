@@ -70,7 +70,7 @@ impl NewsFetchService {
         glib::spawn_future_local(async move {
             if let Ok(mut articles) = client.fetch_general().await {
                 let top_articles: Vec<Arc<dyn NewsArticle>> = articles
-                    .drain(0..5.min(articles.len()))
+                    .drain(0..15.min(articles.len()))
                     .collect::<Vec<Arc<dyn NewsArticle>>>();
 
                 page.add_top_headlines(&top_articles);

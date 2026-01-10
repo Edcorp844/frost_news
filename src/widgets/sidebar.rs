@@ -38,6 +38,7 @@ impl SideBar {
         let content = self.listbox.clone();
         self.build_search_btn();
         self.build_news_categories();
+        self.build_bottom_components();
 
         self.parent.set_content(Some(&content));
 
@@ -85,17 +86,20 @@ impl SideBar {
 
         self.listbox.set_header_func(|row, before| {
             let id = row.widget_name();
-            
+
             // 1. If this is the Search row, never give it a header
             if id == "search" {
                 row.set_header(None::<&gtk::Widget>);
                 return;
             }
 
-            // 2. If the row BEFORE this one was "search", 
+            // 2. If the row BEFORE this one was "search",
             // it means THIS row is the first actual category.
             // This is where we put the "CATEGORIES" label.
-            let is_first_category = before.as_ref().map(|b| b.widget_name() == "search").unwrap_or(false);
+            let is_first_category = before
+                .as_ref()
+                .map(|b| b.widget_name() == "search")
+                .unwrap_or(false);
 
             if is_first_category {
                 let header = gtk::Label::builder()
@@ -118,10 +122,30 @@ impl SideBar {
         // Index 0 is "Search", so Index 1 is the first Category
         if let Some(first_cat_row) = self.listbox.row_at_index(1) {
             self.listbox.select_row(Some(&first_cat_row));
-            
+
             // Optional: If you want to trigger the 'on_click' logic immediately
             // so the news loads on startup:
             first_cat_row.activate();
         }
+    }
+
+    fn build_bottom_components(&self) {
+        let row_box = gtk::Box::builder()
+            .spacing(4)
+            .margin_start(12)
+            .margin_end(12)
+            .css_classes(vec!["Category"])
+            .build();
+
+        let icon = gtk::Image::from_icon_name("system-search-symbolic");
+        icon.set_pixel_size(18);
+        row_box.append(&icon);
+        row_box.append(&gtk::Label::new(Some("Search")));
+
+        let row = gtk::ListBoxRow::new();
+        row.set_child(Some(&row_box));
+        row.set_widget_name("search");
+
+        self.parent.clone().add_bottom_bar(&row);
     }
 }

@@ -88,7 +88,7 @@ impl FrostNewsAPPWindow {
     pub fn initialise(&self) {
         self.bind_sidebar_children();
         self.get_news_service()
-            .fetch_news(NewsCategory::General, NewsSource::NewsAPI);
+            .fetch_news(NewsCategory::Health, NewsSource::NewsAPI);
         self.get_sidebar().select_first_category();
     }
 
