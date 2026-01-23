@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="frostnews">
+  <schema id="com.example.frostnews" path="/com/example/frostnews/">
+    
+    <key name="country" type="s">
+      <default>'us'</default>
+      <summary>News Country</summary>
+    </key>
+
+    <key name="language" type="s">
+      <default>'en'</default>
+      <summary>News Language</summary>
+    </key>
+
+    <key name="news-source" type="s">
+      <default>'NewsAPI'</default>
+      <summary>News Source</summary>
+    </key>
+
+    <key name="page-size" type="i">
+      <default>20</default>
+      <summary>Articles per page</summary>
+    </key>
+
+    <key name="dark-mode" type="b">
+      <default>true</default>
+      <summary>Enable dark mode preference</summary>
+    </key>
+
+  </schema>
+</schemalist>
