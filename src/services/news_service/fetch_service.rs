@@ -92,7 +92,7 @@ impl NewsFetchService {
         self.sync_parameters();
         let params = self.request_parameters.clone();
         gtk::glib::spawn_future_local(async move {
-            match client.fetch_testnews(params).await {
+            match client.fetch_general(params).await {
                 Ok(articles) => {
                     let mut grouped: BTreeMap<String, Vec<Arc<dyn NewsArticle>>> = BTreeMap::new();
                     let time_organiser = crate::utils::time_organizer::UITimeOrganiser::new();
